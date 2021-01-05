@@ -2,7 +2,7 @@ const jwt = require ('jsonwebtoken');
 
 const validarJWT = (req,res,next) => {
     const token =req.header('x-token');
-    console.log(token);
+    // console.log(token);
     if (!token) {
         return res.status(401).json({
             ok:false,
@@ -15,10 +15,12 @@ const validarJWT = (req,res,next) => {
 
         next();
     } catch (error) {
-        return res.status(401).json({
-            ok:false,
-            msg: 'Token no válido'
-        });
+        // return res.status(401).json({
+        //     ok:false,
+        //     msg: 'Token no válido'
+        // });
+        console.log("Unexpected error: " + error);
+        return;
     }
 
 

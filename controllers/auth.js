@@ -85,7 +85,7 @@ try {
         ok:true,
         msg:'login'
     })
-}
+} 
 
 const renewToken = async ( req, res = response) => {
 
